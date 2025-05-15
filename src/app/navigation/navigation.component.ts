@@ -8,11 +8,17 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { PagoComponent } from '../componentes/pago-form/pago-form.component';
+
+
+
+
 
 @Component({
   selector: 'app-navigation',
+  standalone: true,
   templateUrl: './navigation.component.html',
-  styleUrl: './navigation.component.scss',
+  styleUrls: ['./navigation.component.scss'],
   imports: [
     MatToolbarModule,
     MatButtonModule,
@@ -20,8 +26,11 @@ import { map, shareReplay } from 'rxjs/operators';
     MatListModule,
     MatIconModule,
     AsyncPipe,
+    PagoComponent // ✅ Aquí lo agregas
   ]
 })
+
+
 export class NavigationComponent {
   private breakpointObserver = inject(BreakpointObserver);
 

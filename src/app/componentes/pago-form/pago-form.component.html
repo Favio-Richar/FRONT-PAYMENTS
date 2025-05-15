@@ -1,0 +1,30 @@
+<div class="contenedor-pago">
+  <div class="panel-izquierdo">
+    <h3>Selecciona tus servicios a pagar</h3>
+    <mat-checkbox [(ngModel)]="deudaHogarSeleccionada">Total deuda Hogar</mat-checkbox>
+    <p *ngIf="deudaHogarSeleccionada">Deuda vencida: $0</p>
+
+    <mat-checkbox [(ngModel)]="deudaMovilSeleccionada">Total deuda Móvil</mat-checkbox>
+  </div>
+
+  <div class="panel-derecho">
+    <h3>Selecciona un medio de pago</h3>
+    <div class="metodos-pago">
+      <button mat-button *ngFor="let metodo of metodos" (click)="seleccionarMetodo(metodo)">
+        {{ metodo }}
+      </button>
+    </div>
+  </div>
+
+  <div class="email">
+    <mat-form-field appearance="outline">
+      <mat-label>Ingresa tu email para recibir comprobante</mat-label>
+      <input matInput [(ngModel)]="email" required />
+    </mat-form-field>
+  </div>
+
+  <div class="total">
+    <p>Total a pagar: <strong>${{ total }}</strong></p>
+    <button mat-raised-button color="primary" (click)="pagar()">Pagar</button>
+  </div>
+</div>

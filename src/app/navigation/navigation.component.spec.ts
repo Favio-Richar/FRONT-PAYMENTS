@@ -1,4 +1,5 @@
 import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NavigationComponent } from './navigation.component';
 
@@ -8,15 +9,8 @@ describe('NavigationComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [NavigationComponent],
-      imports: [
-        MatButtonModule,
-        MatIconModule,
-        MatListModule,
-        MatSidenavModule,
-        MatToolbarModule,
-      ]
-    });
+      imports: [NoopAnimationsModule]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
